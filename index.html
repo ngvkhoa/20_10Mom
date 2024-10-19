@@ -20,9 +20,11 @@
         
         .container {
             width: 800px;
-            height: 400px;
+            height: 650px; /* Tăng chiều cao của container lên 500px */
             display: flex; /* Sử dụng flexbox để căn giữa nội dung con */
             align-items: center; /* Căn giữa theo chiều dọc trong container */
+            flex-direction: column; /* Đặt hướng của flex là cột */
+            position: relative; /* Thay đổi thành relative để dễ dàng điều chỉnh */
         }
         
         h1 {
@@ -32,13 +34,22 @@
             text-align: center; /* Căn giữa nội dung h1 */
             flex: 1; /* Để h1 chiếm không gian có sẵn */
         }
+
+        .wish {
+            font-size: 24px; /* Kích thước chữ nhỏ hơn cho lời chúc */
+            color: #FE7696; /* Màu chữ của lời chúc */
+            text-align: center; /* Căn giữa nội dung lời chúc */
+            margin-bottom: 20px; /* Khoảng cách dưới cho lời chúc */
+        }
         
         .rose {
             width: 200px;
             height: 200px;
-            position: relative; /* Thay đổi từ absolute sang relative để căn giữa dễ hơn */
+            position: absolute; /* Đặt bông hoa ở vị trí tuyệt đối */
+            left: 45%; /* Căn giữa theo chiều ngang */
+            bottom: 100px; /* Cách dưới 70px */
+            transform: translate(-50%, 0); /* Dịch chuyển sang trái 50% chiều rộng của bông hoa để căn giữa */
             animation: yidon 3s infinite; /* Giảm thời gian hoạt ảnh */
-            margin-left: auto; /* Tự động tạo margin trái để căn sang phải */
         }
         
         .petal {
@@ -169,6 +180,7 @@
     <div class="container">
         <div class="letter">
             <h1>Happy Vietnamese Women's Day</h1>
+            <div class="wish">Chúc mẹ 20/10 vui vẻ, có thật nhiều may mắn, lúc nào cũng xinh đẹp và có nhiều niềm vui trong cuộc sống.</div> <!-- Lời chúc -->
         </div>
         <div class="rose">
             <div class="flower">
