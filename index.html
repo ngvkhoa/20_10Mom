@@ -1,202 +1,239 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap" rel="stylesheet">
-    <title>Happy Vietnamese Women's Day</title>
-    <style>
-        body {
-            background: #fadede;
-            display: flex;
-            justify-content: center; /* Căn giữa theo chiều ngang */
-            align-items: center; /* Căn giữa theo chiều dọc */
-            height: 100vh; /* Chiều cao 100% viewport */
-            margin: 0; /* Loại bỏ margin mặc định của body */
-            position: relative; /* Cần thiết cho định vị tuyệt đối */
-            color: white; /* Màu chữ mặc định là trắng */
-            font-family: Aharoni, sans-serif; /* Đổi font chữ thành Aharoni */
-        }
-        
-        .container {
-            width: 800px;
-            height: 800px; /* Tăng chiều cao của container lên 500px */
-            display: flex; /* Sử dụng flexbox để căn giữa nội dung con */
-            align-items: center; /* Căn giữa theo chiều dọc trong container */
-            flex-direction: column; /* Đặt hướng của flex là cột */
-            position: relative; /* Thay đổi thành relative để dễ dàng điều chỉnh */
-        }
-        
-        h1 {
-            font-family: 'Sacramento', cursive;
-            color: #FE7696;
-            font-size: 64px;
-            text-align: center; /* Căn giữa nội dung h1 */
-            flex: 1; /* Để h1 chiếm không gian có sẵn */
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap" rel="stylesheet">
+  <title>Happy Vietnamese Women's Day</title>
+  <style>
+    body {
+      background: #fadede;
+      display: flex;
+      justify-content: center;
+      /* Căn giữa theo chiều ngang */
+      align-items: center;
+      /* Căn giữa theo chiều dọc */
+      height: 100vh;
+      /* Chiều cao 100% viewport */
+      margin: 0;
+      /* Loại bỏ margin mặc định của body */
+      position: relative;
+      /* Cần thiết cho định vị tuyệt đối */
+      color: white;
+      /* Màu chữ mặc định là trắng */
+      font-family: Aharoni, sans-serif;
+      /* Đổi font chữ thành Aharoni */
+    }
 
-        .wish {
-            font-size: 24px; /* Kích thước chữ nhỏ hơn cho lời chúc */
-            color: #FE7696; /* Màu chữ của lời chúc */
-            text-align: center; /* Căn giữa nội dung lời chúc */
-            margin-bottom: 10px; /* Khoảng cách dưới cho lời chúc */
-        }
-        
-        .rose {
-            width: 200px;
-            height: 200px;
-            position: absolute; /* Đặt bông hoa ở vị trí tuyệt đối */
-            left: 45%; /* Căn giữa theo chiều ngang */
-            bottom: 120px; /* Cách dưới 70px */
-            transform: translate(-50%, 0); /* Dịch chuyển sang trái 50% chiều rộng của bông hoa để căn giữa */
-            animation: yidon 3s infinite; /* Giảm thời gian hoạt ảnh */
-        }
-        
-        .petal {
-            width: 50px;
-            height: 50px;
-            background: #fe7696;
-            border-radius: 0px 50%;
-            position: absolute;
-            box-shadow: 0 0 10px #D1123F;
-            z-index: 2;
-            transform-origin: bottom right;
-            animation: zhankai2 10s infinite;
-        }
-        
-        .petal:nth-child(2) {
-            transform-origin: right bottom;
-            transform: rotate(90deg);
-            background: #fe7696;
-            left: -10px;
-            animation: zhankai1 10s infinite;
-        }
-        
-        .petal:nth-child(3) {
-            width: 40px;
-            height: 40px;
-            left: 10px;
-            top: -20px;
-            z-index: 1;
-            background: #f03a64;
-            transform-origin: bottom right;
-            animation: zhankai2 10s infinite;
-        }
-        
-        .petal:nth-child(4) {
-            transform: rotate(90deg);
-            width: 40px;
-            height: 40px;
-            left: 0px;
-            top: -20px;
-            z-index: 1;
-            background: #f03a64;
-            transform-origin: bottom right;
-            animation: zhankai1 10s infinite;
-        }
-        
-        .petal:nth-child(5) {
-            width: 50px;
-            height: 50px;
-            border-radius: 20px;
-            left: 20px;
-            top: -30px;
-            z-index: 0;
-            background: #d1123f;
-        }
-        
-        .leaf {
-            position: absolute;
-            top: 120px;
-            left: -115px;
-        }
-        
-        .stem {
-            width: 240px;
-            height: 40px;
-            background: transparent;
-            border: 8px solid #8ac78a;
-            border-color: #77a377 transparent transparent transparent;
-            border-radius: 50% 50%;
-            transform: rotate(100deg);
-        }
-        
-        .leafs {
-            width: 50px;
-            height: 40px;
-            border-radius: 0px 50%;
-            background: #77a377;
-            position: absolute;
-            top: 0;
-            left: 100px;
-            z-index: 49;
-        }
-        
-        .leafs:nth-child(2) {
-            width: 40px;
-            height: 20px;
-            top: 40px;
-            left: 140px;
-            transform: rotate(120deg);
-        }
-        
-        @keyframes yidon {
-            0%, 100% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-5px); /* Giảm khoảng cách di chuyển */
-            }
-        }
-        
-        @keyframes zhankai1 {
-            50% {
-                transform: rotate(110deg);
-            }
-            100% {
-                transform: rotate(90deg);
-            }
-        }
-        
-        @keyframes zhankai2 {
-            50% {
-                transform: rotate(-20deg);
-            }
-            100% {
-                transform: rotate(0deg);
-            }
-        }
+    .container {
+      width: 800px;
+      height: 700px;
+      /* Tăng chiều cao của container lên 500px */
+      display: flex;
+      /* Sử dụng flexbox để căn giữa nội dung con */
+      align-items: center;
+      /* Căn giữa theo chiều dọc trong container */
+      flex-direction: column;
+      /* Đặt hướng của flex là cột */
+      position: relative;
+      /* Thay đổi thành relative để dễ dàng điều chỉnh */
+    }
 
-        .footer-text {
-            position: absolute; /* Định vị tuyệt đối */
-            bottom: 50px; /* Cách dưới 20px */
-            right: 50px; /* Cách phải 20px */
-            font-size: 12px; /* Kích thước chữ nhỏ */
-            font-weight: bold; /* Tô đậm chữ */
-        }
-    </style>
+    h1 {
+      font-family: 'Sacramento', cursive;
+      color: #FE7696;
+      font-size: 64px;
+      text-align: center;
+      /* Căn giữa nội dung h1 */
+      flex: 1;
+      /* Để h1 chiếm không gian có sẵn */
+    }
+
+    .wish {
+      font-size: 24px;
+      /* Kích thước chữ nhỏ hơn cho lời chúc */
+      color: #FE7696;
+      /* Màu chữ của lời chúc */
+      text-align: center;
+      /* Căn giữa nội dung lời chúc */
+      margin-bottom: 10px;
+      /* Khoảng cách dưới cho lời chúc */
+    }
+
+    .rose {
+      width: 200px;
+      height: 200px;
+      position: absolute;
+      /* Đặt bông hoa ở vị trí tuyệt đối */
+      left: 45%;
+      /* Căn giữa theo chiều ngang */
+      bottom: 130px;
+      /* Cách dưới 70px */
+      transform: translate(-50%, 0);
+      /* Dịch chuyển sang trái 50% chiều rộng của bông hoa để căn giữa */
+      animation: yidon 3s infinite;
+      /* Giảm thời gian hoạt ảnh */
+    }
+
+    .petal {
+      width: 50px;
+      height: 50px;
+      background: #fe7696;
+      border-radius: 0px 50%;
+      position: absolute;
+      box-shadow: 0 0 10px #D1123F;
+      z-index: 2;
+      transform-origin: bottom right;
+      animation: zhankai2 10s infinite;
+    }
+
+    .petal:nth-child(2) {
+      transform-origin: right bottom;
+      transform: rotate(90deg);
+      background: #fe7696;
+      left: -10px;
+      animation: zhankai1 10s infinite;
+    }
+
+    .petal:nth-child(3) {
+      width: 40px;
+      height: 40px;
+      left: 10px;
+      top: -20px;
+      z-index: 1;
+      background: #f03a64;
+      transform-origin: bottom right;
+      animation: zhankai2 10s infinite;
+    }
+
+    .petal:nth-child(4) {
+      transform: rotate(90deg);
+      width: 40px;
+      height: 40px;
+      left: 0px;
+      top: -20px;
+      z-index: 1;
+      background: #f03a64;
+      transform-origin: bottom right;
+      animation: zhankai1 10s infinite;
+    }
+
+    .petal:nth-child(5) {
+      width: 50px;
+      height: 50px;
+      border-radius: 20px;
+      left: 20px;
+      top: -30px;
+      z-index: 0;
+      background: #d1123f;
+    }
+
+    .leaf {
+      position: absolute;
+      top: 120px;
+      left: -115px;
+    }
+
+    .stem {
+      width: 240px;
+      height: 40px;
+      background: transparent;
+      border: 8px solid #8ac78a;
+      border-color: #77a377 transparent transparent transparent;
+      border-radius: 50% 50%;
+      transform: rotate(100deg);
+    }
+
+    .leafs {
+      width: 50px;
+      height: 40px;
+      border-radius: 0px 50%;
+      background: #77a377;
+      position: absolute;
+      top: 0;
+      left: 100px;
+      z-index: 49;
+    }
+
+    .leafs:nth-child(2) {
+      width: 40px;
+      height: 20px;
+      top: 40px;
+      left: 140px;
+      transform: rotate(120deg);
+    }
+
+    @keyframes yidon {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-5px);
+        /* Giảm khoảng cách di chuyển */
+      }
+    }
+
+    @keyframes zhankai1 {
+      50% {
+        transform: rotate(110deg);
+      }
+
+      100% {
+        transform: rotate(90deg);
+      }
+    }
+
+    @keyframes zhankai2 {
+      50% {
+        transform: rotate(-20deg);
+      }
+
+      100% {
+        transform: rotate(0deg);
+      }
+    }
+
+    .footer-text {
+      position: absolute;
+      /* Định vị tuyệt đối */
+      bottom: 50px;
+      /* Cách dưới 20px */
+      right: 50px;
+      /* Cách phải 20px */
+      font-size: 12px;
+      /* Kích thước chữ nhỏ */
+      font-weight: bold;
+      /* Tô đậm chữ */
+    }
+  </style>
 </head>
+
 <body onclick="location.reload();">
-    <div class="container">
-        <div class="letter">
-            <h1>Happy Vietnamese Women's Day</h1>
-            <div class="wish">Chúc mẹ 20/10 vui vẻ, lúc nào cũng xinh đẹp, có thật nhiều may mắn và nhiều niềm vui trong cuộc sống nha.</div> <!-- Lời chúc -->
-        </div>
-        <div class="rose">
-            <div class="flower">
-                <div class="petal"></div>
-                <div class="petal"></div>
-                <div class="petal"></div>
-                <div class="petal"></div>
-                <div class="petal"></div>
-            </div>
-            <div class="leaf">
-                <div class="stem"></div>
-                <div class="leafs"></div>
-                <div class="leafs"></div>
-            </div>
-        </div>
+  <div class="container">
+    <div class="letter">
+      <h1>Happy Vietnamese Women's Day</h1>
+      <div class="wish">Chúc mẹ 20/10 vui vẻ, lúc nào cũng xinh đẹp, có thật nhiều may mắn và nhiều niềm vui trong cuộc sống nha.</div> <!-- Lời chúc -->
     </div>
-    <div class="footer-text">/ngvkhoa/</div> <!-- Dòng chữ nhỏ ở góc dưới bên phải -->
+    <div class="rose">
+      <div class="flower">
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="petal"></div>
+      </div>
+      <div class="leaf">
+        <div class="stem"></div>
+        <div class="leafs"></div>
+        <div class="leafs"></div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-text">/ngvkhoa/</div> <!-- Dòng chữ nhỏ ở góc dưới bên phải -->
 </body>
+
 </html>
